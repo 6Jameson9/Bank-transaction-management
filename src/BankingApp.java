@@ -27,7 +27,7 @@ public class BankingApp {
         while (true) {
             System.out.println("[1] Top up your account");
             System.out.println("[2] Withdrawal from account");
-            System.out.println("[3] Проверка баланса");
+            System.out.println("[3] Balance check");
             System.out.println("[4] Exit the program");
 
             int choice = scanner.nextInt();
