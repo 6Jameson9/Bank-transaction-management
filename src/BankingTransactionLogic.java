@@ -9,25 +9,25 @@ class BankingTransactionLogic {
 
     public void performTransaction(Account account, double amount) {
         // Logic for executing the transaction and updating the balance
-        String message = "Account transaction " + account.getAccountNumber() + ": " + amount + " рублей.";
+        String message = "Account transaction " + account.getAccountNumber() + ": " + amount + " tenge.";
         account.deposit(amount);
         transactionSystem.notifyObservers(message);
     }
     public void deposit(Account account, double amount) {
-        // Логика пополнения счета
+
         account.deposit(amount);
-        String message = "Пополнение счета " + account.getAccountNumber() + ": +" + amount + " рублей.";
+        String message = "Top up your account " + account.getAccountNumber() + ": +" + amount + " tenge.";
         transactionSystem.notifyObservers(message);
     }
 
     public void withdraw(Account account, double amount) {
-        // Логика снятия средств со счета
+
         if (account.getBalance() >= amount) {
             account.withdraw(amount);
-            String message = "Снятие со счета " + account.getAccountNumber() + ": -" + amount + " рублей.";
+            String message = "Withdrawal from account " + account.getAccountNumber() + ": -" + amount + " tenge.";
             transactionSystem.notifyObservers(message);
         } else {
-            String message = "Недостаточно средств на счете " + account.getAccountNumber() + " для снятия " + amount + " рублей.";
+            String message = "Insufficient funds in the account " + account.getAccountNumber() + " to withdraw " + amount + " tenge.";
             transactionSystem.notifyObservers(message);
         }
     }
