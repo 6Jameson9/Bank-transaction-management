@@ -29,10 +29,10 @@ class BankingTransactionSystem implements Subject {
     }
 
     public void monitorBalances() {
-        // Метод для мониторинга балансов всех счетов и генерации уведомлений при необходимости
+        // Method for monitoring the balances of all accounts and generating notifications if necessary
         for (Account account : accounts) {
             if (account.getBalance() < 0) {
-                String message = "Account " + account.getAccountNumber() + " has a negative balance: " + account.getBalance() + " рублей.";
+                String message = "Account " + account.getAccountNumber() + " has a negative balance: " + account.getBalance() + " tenge.";
                 notifyObservers(message);
             }
         }
